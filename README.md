@@ -7,4 +7,4 @@ Complete traffic data collection is crucial for intelligent transportation syste
 However, existing methods are limited in modeling the dynamic spatio-temporal dependencies between traffic locations, resulting in unsatisfactory performance of spatial interpolation for unobserved locations in traffic scene. To address this issue, we propose a novel dual branch graph neural network (DBGNN) for spatial interpolation by exploiting dynamic spatio-temporal correlation among traffic nodes. The proposed DBGNN is composed of two branches: the main branch and the auxiliary branch. They are designed to capture the wide-range dynamic spatial correlation and the local detailed spatial diffusion between nodes, respectively. Finally, the two branches are fused via a self-attention mechanism. Extensive experiments on six public datasets demonstrate the advantages of our DBGNN over the state-of-the-art baselines.
 
 # Notes
-The codes will be released as soon as we tidy them up.
+Accepted by Information Fusion in September.. The codes will be released as soon as we tidy them up.
