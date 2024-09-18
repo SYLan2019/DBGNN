@@ -1,0 +1,9 @@
+INFO:root:[experiment_id=1]  seed=1  z=100  K=1  learning_rate=0.0005  E=80  batch=4 epoch=500
+INFO:root:n_s=104, n_m=52, n_u=103
+INFO:root:residual=32,dilation=32,skip=256,end=512,blocks=3,layers=2
+INFO:root:[experiment_id=1]  seed=1  z=100  K=1  learning_rate=0.0005  E=80  batch=4 epoch=500
+INFO:root:n_s=104, n_m=52, n_u=103
+INFO:root:residual=32,dilation=32,skip=256,end=512,blocks=3,layers=2
+INFO:root:[experiment_id=1]  seed=1  z=100  K=1  learning_rate=0.0005  E=80  batch=4 epoch=500
+INFO:root:n_s=104, n_m=52, n_u=103
+INFO:root:residual=32,dilation=32,skip=256,end=512,blocks=3,layers=2

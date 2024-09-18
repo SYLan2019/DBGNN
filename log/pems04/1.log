@@ -1,0 +1,6 @@
+INFO:root:[experiment_id=1]  seed=1  z=100  K=1  learning_rate=0.0005  E=50  batch=4 epoch=500
+INFO:root:n_s=157, n_m=75, n_u=150
+INFO:root:residual=32,dilation=32,skip=256,end=512,blocks=4,layers=2
+INFO:root:[experiment_id=1]  seed=1  z=100  K=1  learning_rate=0.0005  E=50  batch=4 epoch=500
+INFO:root:n_s=157, n_m=75, n_u=150
+INFO:root:residual=32,dilation=32,skip=256,end=512,blocks=4,layers=2

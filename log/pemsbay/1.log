@@ -1,0 +1,4 @@
+INFO:root:[experiment_id=1]  seed=1  z=100  K=1  learning_rate=0.0005  E=80  batch=4 epoch=500
+INFO:root:n_s=165, n_m=80, n_u=160
+INFO:root:residual=32,dilation=32,skip=256,end=512,blocks=4,layers=2
+INFO:root:best epoch=53, mae=3.8054993457120623, rmse=6.7693163998658985, mape=0.08821717987474854
