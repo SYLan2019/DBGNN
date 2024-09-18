@@ -5,3 +5,6 @@ INFO:root:best epoch=25, mae=3.6704656657498576, rmse=6.492196448974394, mape=0.
 INFO:root:[experiment_id=1]  seed=1  z=100  K=1  learning_rate=0.0005  E=50  batch=4 epoch=500
 INFO:root:n_s=90, n_m=40, n_u=80
 INFO:root:residual=32,dilation=32,skip=256,end=512,blocks=4,layers=2
+INFO:root:[experiment_id=1]  seed=1  z=100  K=1  learning_rate=0.0005  E=50  batch=4 epoch=500
+INFO:root:n_s=90, n_m=40, n_u=80
+INFO:root:residual=32,dilation=32,skip=256,end=512,blocks=4,layers=2

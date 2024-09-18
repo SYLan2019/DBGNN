@@ -140,22 +140,49 @@ class gcn(nn.Module):
         h = F.dropout(h, self.dropout, training=self.training)
         return h
 
-class DGL(nn.Module):
+class DGL(nn.Module):   #期望输入bfnt，输出nn
     def __init__(self,time_dim,feature):
         super(DGL,self).__init__()
-        self.d_k=32
+        self.d_k=32                         # 可以改
         self.dim=time_dim*feature
         self.W_Q=nn.Linear(self.dim,self.d_k,bias=False)
         self.W_K=nn.Linear(self.dim,self.d_k,bias=False)
+    def drop(self,tensor):
+        k = int(tensor.shape[0]*tensor.shape[1]*0.1)  # 要保留的最大值数量
+        dropout_prob = 0.1
+
+        # 找到张量中的前k个最大值及其位置
+        values, indices = torch.topk(tensor.view(-1), k)
+        topk_mask = torch.zeros_like(tensor)
+        topk_mask.view(-1)[indices] = 1
+        topk_mask = topk_mask.view(tensor.size())
+        # 复制张量并保留前k个最大值
+        tensor_copy = tensor.clone()
+        tensor_copy = tensor_copy * topk_mask
+        # 对剩余部分应用dropout
+        dropout_mask = torch.rand_like(tensor) < dropout_prob
+        tensor_remaining = tensor * (1 - topk_mask)  # 剩余部分
+        # tensor_remaining = tensor_remaining * dropout_mask
+        tensor_remaining=F.dropout(tensor_remaining,p=dropout_prob,training=self.training)
+        # 合并保留的最大值和dropout后的剩余部分
+        final_tensor = tensor_copy + tensor_remaining
+        return final_tensor
 
     def forward(self,x):    # bfnt
         residual, batch_size, feature, num_nodes = x, x.size(0), x.size(1), x.size(2)
+
+
         x=x.permute(0,2,3,1)    #bntf
         x=torch.reshape(x,shape=(batch_size,num_nodes,-1))
+
         Q=self.W_Q(x)
         K=self.W_K(x)
         scores=torch.matmul(Q,K.transpose(-1,-2))/np.sqrt(self.d_k)
+
         attn=nn.Softmax(dim=-1)(torch.sum(scores,dim=0))
+        # attn = F.dropout(attn, 0.1, training=self.training)
+        attn=self.drop(attn)
+        return attn
         return attn
 class Attention(nn.Module):
     def __init__(self):
