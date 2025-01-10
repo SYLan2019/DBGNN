@@ -11,8 +11,12 @@ Accepted by Information Fusion in September,2024.
 
 # [BibTeX] [[DOI](https://doi.org/10.1016/j.inffus.2024.102703)]
 @article{journals/inffus/ZhuZLWHRP25,
+
 	title = {A dual branch graph neural network based spatial interpolation method for traffic data inference in unobserved locations.},
+ 
 	year = {2025},
+ 
 	journal = {Inf. Fusion},
+ 
 	author = {{Wujiang Zhu} and {Xinyuan Zhou} and {Shiyong Lan} and {Wenwu Wang 001} and {Zhiang Hou} and {Yao Ren} and {Tianyi Pan}}
 }
